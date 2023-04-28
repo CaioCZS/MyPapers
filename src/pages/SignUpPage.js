@@ -2,10 +2,16 @@ import SignScreen from "../style/signPages/SignScreen.js"
 import LogoContainer from "../style/signPages/LogoContainer.js"
 import { useState } from "react"
 import authApi from "../services/authApi.js"
+import { useNavigate } from "react-router-dom"
 
 export default function SignUpPage() {
-  const [form, setForm] = useState({ email: "", password: "", name: "" })
-
+  const [form, setForm] = useState({
+    name: "",
+    email: "",
+    password: "",
+    passwordConfirm: "",
+  })
+  const navigate = useNavigate()
   function handleForm(e) {
     e.preventDefault()
     setForm({ ...form, [e.target.name]: e.target.value })
@@ -13,9 +19,19 @@ export default function SignUpPage() {
 
   function handleSubmit(e) {
     e.preventDefault()
+    const { name, email, password, passwordConfirm } = form
+    const body = { name, email, password }
+    if (passwordConfirm !== password) {
+      alert("Senhas precisam ser iguais")
+      setForm({ ...form, password: "", passwordConfirm: "" })
+      return
+    }
     authApi
-      .signUp(form)
-      .then((res) => alert(res.data))
+      .signUp(body)
+      .then((res) => {
+        alert(res.data)
+        navigate("/login")
+      })
       .catch((err) => {
         alert(err.response.data)
         if (err.response.status === 409) {
@@ -51,6 +67,14 @@ export default function SignUpPage() {
           placeholder="SENHA"
           name="password"
           value={form.password}
+          onChange={handleForm}
+          required
+        ></input>
+        <input
+          type="password"
+          placeholder="CONFIRME SUA SENHA"
+          name="passwordConfirm"
+          value={form.passwordConfirm}
           onChange={handleForm}
           required
         ></input>
