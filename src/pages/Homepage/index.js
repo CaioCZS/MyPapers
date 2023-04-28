@@ -1,4 +1,4 @@
-import Header from "../../components/Header";
+import Header from "../../components/Header"
 import {
   ContainerBody,
   ContainerAd,
@@ -44,5 +44,5 @@ export default function HomePage() {
         </ContainerProduct>
       </ContainerBody>
     </>
-  );
+  )
 }

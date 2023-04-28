@@ -1,12 +1,13 @@
 import SignScreen from "../style/signPages/SignScreen.js"
 import LogoContainer from "../style/signPages/LogoContainer.js"
-import { useState } from "react"
+import { useContext, useState } from "react"
 import authApi from "../services/authApi.js"
 import { useNavigate } from "react-router-dom"
+import UserContext from "../Context/UserContext.js"
 
 export default function LoginPage() {
   const [form, setForm] = useState({ email: "", password: "" })
-
+  const { setUser } = useContext(UserContext)
   function handleForm(e) {
     e.preventDefault()
     setForm({ ...form, [e.target.name]: e.target.value })
@@ -18,7 +19,9 @@ export default function LoginPage() {
     authApi
       .login(form)
       .then((res) => {
-        console.log(res.data)
+        const userTkn = res.data
+        setUser(userTkn)
+        localStorage.setItem("user", JSON.stringify(userTkn))
         navigate("/")
       })
       .catch((err) => {
