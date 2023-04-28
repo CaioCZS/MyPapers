@@ -14,6 +14,10 @@ export const ContainerHeader = styled.div`
   left: 0px;
   top: 0px;
   z-index: 1;
+  img {
+    width: 60px;
+    height: 60px;
+  }
 `;
 export const MenuIcon = styled(IoMenuOutline)`
   font-size: 40px;
