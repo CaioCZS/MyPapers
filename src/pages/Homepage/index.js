@@ -1,10 +1,5 @@
-import Header from "../../components/Header"
-import {
-  ContainerBody,
-  ContainerAd,
-  ContainerProduct,
-  Product,
-} from "./style";
+import Header from "../../components/Header";
+import { ContainerBody, ContainerAd, ContainerProduct, Product } from "./style";
 import Search from "../../components/Search/index";
 
 export default function HomePage() {
@@ -44,5 +39,5 @@ export default function HomePage() {
         </ContainerProduct>
       </ContainerBody>
     </>
-  )
+  );
 }
