@@ -1,9 +1,13 @@
-import Homepage from "./pages/Homepage"
+import Cart from "./pages/Cart";
+import Homepage from "./pages/Homepage";
 
 function App() {
   return (
-    <Homepage/>
-  )
+    <>
+      {/* <Homepage /> */}
+      <Cart />
+    </>
+  );
 }
 
-export default App
+export default App;
