@@ -1,22 +1,18 @@
 import Header from "../../components/Header";
 import {
   ContainerBody,
-  Search,
-  SearchIcon,
   ContainerAd,
   ContainerProduct,
   Product,
 } from "./style";
+import Search from "../../components/Search/index";
 
 export default function HomePage() {
   return (
     <>
       <Header />
       <ContainerBody>
-        <Search>
-          <input placeholder="O que você está procurando?" />
-          <SearchIcon />
-        </Search>
+        <Search />
         <ContainerAd>
           <img alt="ad" src="" />
         </ContainerAd>
