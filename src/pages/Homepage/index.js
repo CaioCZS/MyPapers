@@ -1,4 +1,4 @@
-import Header from "../../components/Header";
+import Header from "../../components/Header"
 import {
   ContainerBody,
   Search,
@@ -6,7 +6,7 @@ import {
   ContainerAd,
   ContainerProduct,
   Product,
-} from "./style";
+} from "./style"
 
 export default function HomePage() {
   return (
@@ -48,5 +48,5 @@ export default function HomePage() {
         </ContainerProduct>
       </ContainerBody>
     </>
-  );
+  )
 }
