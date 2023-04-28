@@ -4,6 +4,8 @@ import { useContext, useState } from "react"
 import authApi from "../services/authApi.js"
 import { useNavigate } from "react-router-dom"
 import UserContext from "../Context/UserContext.js"
+import StyledLink from "../style/signPages/StyledLink.js"
+import logo from "../assets/img/logo.png"
 
 export default function LoginPage() {
   const [form, setForm] = useState({ email: "", password: "" })
@@ -33,7 +35,7 @@ export default function LoginPage() {
   return (
     <SignScreen>
       <LogoContainer>
-        <h1>LOGO</h1>
+        <img src={logo} alt="logo" onClick={() => navigate("/")} />
       </LogoContainer>
       <form onSubmit={handleSubmit}>
         <input
@@ -54,6 +56,7 @@ export default function LoginPage() {
         ></input>
         <button type="submit">Entrar</button>
       </form>
+      <StyledLink to="/cadastro">Não possui cadastro? Clique aqui!</StyledLink>
     </SignScreen>
   )
 }

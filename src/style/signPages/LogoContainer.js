@@ -1,16 +1,16 @@
 import styled from "styled-components"
 
 const LogoContainer = styled.div`
-  height: 40vh;
+  height: 35vh;
   width: 100vw;
   display: flex;
   justify-content: center;
   position: relative;
-  h1 {
+  img {
+    width: 20em;
+    height: 20em;
     position: absolute;
-    bottom: 30px;
-    font-size: 30px;
-    color: #eeeeee;
+    bottom: -70px;
   }
 `
 export default LogoContainer
