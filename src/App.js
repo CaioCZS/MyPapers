@@ -1,8 +1,8 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom"
 import LoginPage from "./pages/LoginPage.js"
 import SignUpPage from "./pages/SignUpPage.js"
-import Cart from "./pages/Cart";
-import Homepage from "./pages/Homepage";
+import Cart from "./pages/Cart"
+import Homepage from "./pages/Homepage"
 
 function App() {
   return (
@@ -15,5 +15,5 @@ function App() {
       </Routes>
     </BrowserRouter>
   )
-
-export default App;
+}
+export default App
