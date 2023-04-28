@@ -1,19 +1,24 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import LoginPage from "./pages/LoginPage.js";
-import SignUpPage from "./pages/SignUpPage.js";
-import Cart from "./pages/Cart";
-import Homepage from "./pages/Homepage";
+import { Routes, Route } from "react-router-dom"
+import LoginPage from "./pages/LoginPage.js"
+import SignUpPage from "./pages/SignUpPage.js"
+import Cart from "./pages/Cart"
+import Homepage from "./pages/Homepage"
+import UserContext from "./Context/UserContext.js"
+import { useState } from "react"
 
 function App() {
+  const lsUser = JSON.parse(localStorage.getItem("user"))
+  const [user, setUser] = useState(lsUser ? lsUser : {})
+
   return (
-    <BrowserRouter>
+    <UserContext.Provider value={{ user, setUser }}>
       <Routes>
         <Route path="/" element={<Homepage />}></Route>
         <Route path="/carrinho" element={<Cart />}></Route>
         <Route path="/login" element={<LoginPage />}></Route>
         <Route path="/cadastro" element={<SignUpPage />}></Route>
       </Routes>
-    </BrowserRouter>
-  );
+    </UserContext.Provider>
+  )
 }
-export default App;
+export default App
