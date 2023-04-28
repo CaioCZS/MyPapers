@@ -4,8 +4,11 @@ const SignScreen = styled.div`
   height: 100vh;
   width: 100vw;
   background-color: #f0cdab;
+  text-align: center;
   form {
+    font-family: "Inter";
     padding: 20px;
+    font-weight: 500;
     min-height: 40vh;
     max-height: 60vh;
     display: flex;
@@ -21,7 +24,11 @@ const SignScreen = styled.div`
     display: flex;
     align-items: center;
     padding-left: 23px;
+    font-weight: 500;
+    font-family: "Inter";
     &::placeholder {
+      font-family: "Inter";
+      font-weight: 500;
       letter-spacing: 2px;
       color: #000000;
       font-size: 10px;
@@ -47,6 +54,8 @@ const SignScreen = styled.div`
     color: #000000;
     font-size: 10px;
     margin-top: 15px;
+    font-family: "Inter";
+    font-weight: 500;
   }
 `
 export default SignScreen

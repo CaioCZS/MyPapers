@@ -3,7 +3,8 @@ import LogoContainer from "../style/signPages/LogoContainer.js"
 import { useState } from "react"
 import authApi from "../services/authApi.js"
 import { useNavigate } from "react-router-dom"
-
+import StyledLink from "../style/signPages/StyledLink.js"
+import logo from "../assets/img/logo.png"
 export default function SignUpPage() {
   const [form, setForm] = useState({
     name: "",
@@ -43,7 +44,7 @@ export default function SignUpPage() {
   return (
     <SignScreen>
       <LogoContainer>
-        <h1>LOGO</h1>
+        <img src={logo} alt="logo" onClick={() => navigate("/")} />
       </LogoContainer>
       <form onSubmit={handleSubmit}>
         <input
@@ -80,6 +81,7 @@ export default function SignUpPage() {
         ></input>
         <button type="submit">Cadastrar</button>
       </form>
+      <StyledLink to="/login">Já possui login? Clique aqui!</StyledLink>
     </SignScreen>
   )
 }
