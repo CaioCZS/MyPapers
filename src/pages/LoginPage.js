@@ -2,6 +2,7 @@ import SignScreen from "../style/signPages/SignScreen.js"
 import LogoContainer from "../style/signPages/LogoContainer.js"
 import { useState } from "react"
 import authApi from "../services/authApi.js"
+import { useNavigate } from "react-router-dom"
 
 export default function LoginPage() {
   const [form, setForm] = useState({ email: "", password: "" })
@@ -10,12 +11,16 @@ export default function LoginPage() {
     e.preventDefault()
     setForm({ ...form, [e.target.name]: e.target.value })
   }
+  const navigate = useNavigate()
 
   function handleSubmit(e) {
     e.preventDefault()
     authApi
       .login(form)
-      .then((res) => console.log(res.data))
+      .then((res) => {
+        console.log(res.data)
+        navigate("/")
+      })
       .catch((err) => {
         alert(err.response.data)
         setForm({ email: "", password: "" })

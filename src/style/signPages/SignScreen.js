@@ -7,7 +7,7 @@ const SignScreen = styled.div`
   form {
     padding: 20px;
     min-height: 40vh;
-    max-height: 50vh;
+    max-height: 60vh;
     display: flex;
     flex-direction: column;
     align-items: center;
