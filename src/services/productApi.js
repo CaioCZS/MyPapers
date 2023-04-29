@@ -5,6 +5,11 @@ function itens() {
   return promise;
 }
 
-const productApi = { itens };
+function item(id) {
+  const promise = axios.get(`${process.env.REACT_APP_BASE_URL}/item/${id}`);
+  return promise;
+}
+
+const productApi = { itens, item };
 
 export default productApi;

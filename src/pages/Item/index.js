@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import Header from "../../components/Header";
 import Search from "../../components/Search";
 import {
@@ -7,8 +8,20 @@ import {
   ShippingIcon,
   ContainerDescription,
 } from "./style";
+import productApi from "../../services/productApi";
 
 export default function Item() {
+  const [item, setItem] = useState();
+
+  useEffect(getItem, []);
+
+  function getItem() {
+    productApi
+      .item()
+      .then((res) => setItem(res.data))
+      .catch((err) => alert(err.response.data));
+  }
+
   return (
     <>
       <Header />
