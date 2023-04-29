@@ -33,7 +33,7 @@ export const ContainerProduct = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
-  background-color: #ffffff;
+  background-color: #B6D4BB;
   border-radius: 10px;
   box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
   .title {

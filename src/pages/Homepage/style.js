@@ -40,7 +40,7 @@ export const Product = styled.div`
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  background-color: #b6d4bb;
+  background-color: #ffffff;
   border-radius: 10px;
   box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
   img {
