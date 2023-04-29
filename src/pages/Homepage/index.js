@@ -9,8 +9,6 @@ export default function HomePage() {
   const [itens, setItens] = useState();
   const navigate = useNavigate();
 
-  useEffect(getItems, []);
-
   function getItems() {
     productApi
       .itens()
@@ -18,12 +16,10 @@ export default function HomePage() {
       .catch((err) => alert(err.response.data));
   }
 
+  useEffect(getItems, []);
+
   function Page(page) {
-    if (page === "product") {
-      navigate("/item");
-    } else if (page === "ad") {
-      navigate("/");
-    }
+    navigate(page);
   }
 
   return (
@@ -32,12 +28,12 @@ export default function HomePage() {
       <ContainerBody>
         <Search />
         <ContainerAd>
-          <img alt="ad" src="" onClick={() => Page("ad")} />
+          <img alt="ad" src="" onClick={() => Page("/")} />
         </ContainerAd>
         <ContainerProduct>
           {itens &&
             itens.map((p) => (
-              <Product key={p._id} onClick={() => Page("product")}>
+              <Product key={p._id} onClick={() => Page(`/item/${p._id}`)}>
                 <img alt="product" src={p.image}></img>
                 <h3>Name preço</h3>
               </Product>

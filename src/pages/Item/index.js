@@ -13,8 +13,6 @@ import productApi from "../../services/productApi";
 export default function Item() {
   const [item, setItem] = useState();
 
-  useEffect(getItem, []);
-
   function getItem() {
     productApi
       .item()
@@ -22,18 +20,20 @@ export default function Item() {
       .catch((err) => alert(err.response.data));
   }
 
+  useEffect(getItem, []);
+
   return (
     <>
       <Header />
       <ContainerBody>
         <Search />
         <ContainerItem>
-          <img alt="product" src="" />
+          <img alt="product" src={item.price} />
         </ContainerItem>
         <ContainerProduct>
           <div className="title">
-            <h2>NOME DO PRODUTO</h2>
-            <h2>PREÇO</h2>
+            <h2>{item.name}</h2>
+            <h2>{item.price}</h2>
           </div>
           <div className="shipping">
             <ShippingIcon />
@@ -45,10 +45,7 @@ export default function Item() {
         </ContainerProduct>
         <ContainerDescription>
           <h2>DESCRIÇÃO</h2>
-          <p>
-            Lorem Ipsum is simply dummy text of the printing and typesetting
-            industry.
-          </p>
+          <p>{item.description}</p>
         </ContainerDescription>
       </ContainerBody>
     </>
