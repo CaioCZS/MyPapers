@@ -38,7 +38,8 @@ export default function HomePage() {
             itens.map((p) => (
               <Product key={p._id} onClick={() => Page(`/item/${p._id}`)}>
                 <img alt="product" src={p.image}></img>
-                <h3>Name preço</h3>
+                <p>{p.name}</p>
+                <p>{p.price}</p>
               </Product>
             ))}
         </ContainerProduct>
