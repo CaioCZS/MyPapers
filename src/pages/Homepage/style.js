@@ -16,7 +16,7 @@ export const ContainerAd = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #f0cdab;
+  background-color: #ffffff;
   border-radius: 10px;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   img {
@@ -40,20 +40,20 @@ export const Product = styled.div`
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  background-color: #b6d4bb;
+  background-color: #ffffff;
   border-radius: 10px;
   box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
   img {
-    margin-top: 15px;
+    margin-top: 8px;
     width: 60px;
     height: 60px;
   }
-  h3 {
-    margin-bottom: 10px;
+  p {
+    margin-bottom: 8px;
     font-family: "Inter";
     font-style: normal;
     font-weight: 400;
-    font-size: 14px;
+    font-size: 10px;
     line-height: 12px;
     color: #01172f;
   }

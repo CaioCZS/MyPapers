@@ -3,7 +3,7 @@ import styled from "styled-components"
 const SignScreen = styled.div`
   height: 100vh;
   width: 100vw;
-  background-color: #f0cdab;
+  background-color: #B6D4BB;
   text-align: center;
   form {
     font-family: "Inter";
