@@ -4,9 +4,11 @@ import Search from "../../components/Search/index";
 import { useNavigate } from "react-router-dom";
 import productApi from "../../services/productApi";
 import { useEffect, useState } from "react";
+import SideBar from "../../components/SideBar";
 
 export default function HomePage() {
   const [itens, setItens] = useState();
+  const [hidden, setHidden] = useState(true);
   const navigate = useNavigate();
 
   function getItems() {
@@ -24,7 +26,8 @@ export default function HomePage() {
 
   return (
     <>
-      <Header />
+      <Header hidden={hidden} setHidden={setHidden} />
+      <SideBar hidden={hidden} setHidden={setHidden} />
       <ContainerBody>
         <Search />
         <ContainerAd>
