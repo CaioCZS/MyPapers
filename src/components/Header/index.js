@@ -6,18 +6,14 @@ export default function Header() {
   const navigate = useNavigate();
 
   function Page(page) {
-    if (page === "cart") {
-      navigate("/carrinho");
-    } else if (page === "logo") {
-      navigate("/");
-    }
+    navigate(page);
   }
 
   return (
     <ContainerHeader>
       <MenuIcon />
-      <img alt="logo" src={logo} onClick={() => Page("logo")}  />
-      <CartIcon onClick={() => Page('cart')} />
+      <img alt="logo" src={logo} onClick={() => Page("/")} />
+      <CartIcon onClick={() => Page("/carrinho")} />
     </ContainerHeader>
   );
 }
