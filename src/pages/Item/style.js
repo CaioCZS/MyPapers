@@ -1,5 +1,5 @@
-import styled from "styled-components"
-import { FaShippingFast } from "react-icons/fa"
+import styled from "styled-components";
+import { FaShippingFast } from "react-icons/fa";
 
 export const ContainerBody = styled.div`
   width: 100vw;
@@ -9,7 +9,7 @@ export const ContainerBody = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-`
+`;
 
 export const ContainerItem = styled.div`
   width: 100vw;
@@ -17,13 +17,13 @@ export const ContainerItem = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #f0cdab;
+  background-color: #ffffff;
   border-radius: 10px;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   img {
     width: 120px;
   }
-`
+`;
 
 export const ContainerProduct = styled.div`
   margin-top: 21px;
@@ -33,7 +33,7 @@ export const ContainerProduct = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
-  background-color: #b6d4bb;
+  background-color: #ffffff;
   border-radius: 10px;
   box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
   .title {
@@ -81,12 +81,12 @@ export const ContainerProduct = styled.div`
     line-height: 12px;
     color: #01172f;
   }
-`
+`;
 
 export const ShippingIcon = styled(FaShippingFast)`
   margin-right: 4px;
   font-size: 12px;
-`
+`;
 
 export const ContainerDescription = styled.div`
   width: 220px;
@@ -115,4 +115,4 @@ export const ContainerDescription = styled.div`
     line-height: 12px;
     color: #01172f;
   }
-`
+`;

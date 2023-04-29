@@ -16,7 +16,7 @@ export const ContainerAd = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #f0cdab;
+  background-color: #ffffff;
   border-radius: 10px;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   img {

@@ -29,7 +29,7 @@ export default function Item() {
       .catch((err) => alert(err.response.data));
   }
 
-  useEffect(getItem, []);
+  useEffect(getItem, [id]);
 
   return (
     <>
