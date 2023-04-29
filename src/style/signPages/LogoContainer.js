@@ -7,10 +7,9 @@ const LogoContainer = styled.div`
   justify-content: center;
   position: relative;
   img {
-    width: 20em;
-    height: 20em;
+    width: 13em;
+    height: 13em;
     position: absolute;
-    bottom: -70px;
   }
 `
 export default LogoContainer

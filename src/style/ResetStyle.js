@@ -47,6 +47,9 @@ table {
 *{
 	box-sizing:border-box;
 }
+body{
+	background-color:#f1e7c5;
+}
 `
 
 export default ResetStyle
