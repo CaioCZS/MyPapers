@@ -1,28 +1,33 @@
-import { useEffect, useState } from "react";
-import Header from "../../components/Header";
-import Search from "../../components/Search";
+import { useEffect, useState } from "react"
+import Header from "../../components/Header"
+import Search from "../../components/Search"
 import {
   ContainerBody,
   ContainerItem,
   ContainerProduct,
   ShippingIcon,
   ContainerDescription,
-} from "./style";
-import productApi from "../../services/productApi";
-import { useParams } from "react-router";
+} from "./style"
+import productApi from "../../services/productApi"
+import { useParams } from "react-router"
 
 export default function Item() {
-  const { id } = useParams();
-  const [item, setItem] = useState();
+  const { id } = useParams()
+  const [item, setItem] = useState({
+    name: "",
+    image: "",
+    price: "",
+    description: "",
+  })
 
   function getItem() {
     productApi
       .item(id)
       .then((res) => setItem(res.data))
-      .catch((err) => alert(err.response.data));
+      .catch((err) => alert(err.response.data))
   }
 
-  useEffect(getItem, []);
+  useEffect(getItem, [])
 
   return (
     <>
@@ -30,7 +35,7 @@ export default function Item() {
       <ContainerBody>
         <Search />
         <ContainerItem>
-          <img alt="product" src={item.price} />
+          <img alt="product" src={item.image} />
         </ContainerItem>
         <ContainerProduct>
           <div className="title">
@@ -51,5 +56,5 @@ export default function Item() {
         </ContainerDescription>
       </ContainerBody>
     </>
-  );
+  )
 }
