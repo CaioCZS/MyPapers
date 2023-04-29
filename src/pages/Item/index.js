@@ -9,13 +9,15 @@ import {
   ContainerDescription,
 } from "./style";
 import productApi from "../../services/productApi";
+import { useParams } from "react-router";
 
 export default function Item() {
+  const { id } = useParams();
   const [item, setItem] = useState();
 
   function getItem() {
     productApi
-      .item()
+      .item(id)
       .then((res) => setItem(res.data))
       .catch((err) => alert(err.response.data));
   }
