@@ -1,54 +1,52 @@
-import { Link } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 import styled from "styled-components"
-
+import ResumeContainer from "./ResumeContainer.js"
+import { useState } from "react"
 export default function CheckOutPage() {
+  const [form, setForm] = useState({ name: "", cardNumber: "", address: "" })
+  const navigate = useNavigate()
+  function handleForm(e) {
+    e.preventDefault()
+    setForm({ ...form, [e.target.name]: e.target.value })
+  }
+
+  function handleSubmit(e) {
+    e.preventDefault()
+    navigate("/")
+  }
+
   return (
     <Screen>
       <CheckoutContainer>
         <Header>Checkout</Header>
-        <StyledForm>
-          <input placeholder="Nome" />
-          <input placeholder="Endereço da entrega" />
-          <input placeholder="Número do cartão" />
-          <OrderResume>
-            <h1>Resumo do pedido</h1>
-            <OrderItems>
-              <li>
-                <p>Nome produto</p>
-                <p>R$ valor</p>
-              </li>
-              <li>
-                <p>Nome produto</p>
-                <p>R$ valor</p>
-              </li>
-              <li>
-                <p>Nome produto</p>
-                <p>R$ valor</p>
-              </li>
-              <li>
-                <p>Nome produto</p>
-                <p>R$ valor</p>
-              </li>
-              <li>
-                <p>Nome produto</p>
-                <p>R$ valor</p>
-              </li>
-              <li>
-                <p>Nome produto</p>
-                <p>R$ valor</p>
-              </li>
-              <li>
-                <p>Nome produto</p>
-                <p>R$ valor</p>
-              </li>
-            </OrderItems>
-            <FinalValue>
-              <p>Total</p>
-              <p>R$ valor</p>
-            </FinalValue>
-          </OrderResume>
+        <StyledForm onSubmit={handleSubmit}>
+          <input
+            placeholder="Nome"
+            type="text"
+            name="name"
+            value={form.name}
+            onChange={handleForm}
+            required
+          />
+          <input
+            placeholder="Endereço da entrega"
+            name="address"
+            type="text"
+            value={form.address}
+            onChange={handleForm}
+            required
+          />
+          <input
+            placeholder="Número do cartão"
+            name="cardNumber"
+            type="number"
+            value={form.cardNumber}
+            onChange={handleForm}
+            required
+          />
+          <ResumeContainer />
           <Buttons>
-            <StyledLink>voltar</StyledLink>
+            <StyledLink to="/carrinho">voltar</StyledLink>
             <button type="submit">Finalizar compra</button>
           </Buttons>
         </StyledForm>
@@ -66,11 +64,11 @@ const Screen = styled.div`
   justify-content: center;
 `
 const CheckoutContainer = styled.div`
-  margin-top: 50px;
   border: thin dashed #01172f33;
   border-radius: 20px;
   width: 90vw;
-  height: 90vh;
+  min-height: 95vh;
+  position: relative;
 `
 const Header = styled.header`
   height: 13vh;
@@ -112,53 +110,14 @@ const StyledForm = styled.form`
     outline: 0;
   }
 `
-
-const OrderResume = styled.div`
-  background-color: #f0cdab;
-  width: 93%;
-  min-height: 40vh;
-  margin: 0 auto;
-  padding: 15px;
-  h1 {
-    font-size: 10px;
-    font-weight: 700;
-  }
-  letter-spacing: 2px;
-  font-family: "inter";
-  text-transform: uppercase;
-  border-radius: 15px;
-  position: relative;
-`
-const OrderItems = styled.ul`
-  font-size: 10px;
-  display: flex;
-  flex-direction: column;
-  margin-top: 15px;
-  gap: 10px;
-  li {
-    display: flex;
-    justify-content: space-between;
-    color: #01172f;
-  }
-`
-const FinalValue = styled.div`
-  color: #eb445b;
-  display: flex;
-  width: 95%;
-  justify-content: space-between;
-  margin-top: 20px;
-  font-size: 14px;
-  font-weight: 700;
-  position: absolute;
-  bottom: 10px;
-  right: 10px;
-`
 const Buttons = styled.div`
   width: 93%;
   display: flex;
   justify-content: flex-end;
   align-items: center;
   gap: 10px;
+  position: absolute;
+  bottom: 10px;
   button {
     background-color: #eb445b80;
     width: 125px;
