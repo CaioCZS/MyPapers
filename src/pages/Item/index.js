@@ -11,6 +11,7 @@ import {
 import productApi from "../../services/productApi";
 import { useParams } from "react-router";
 import SideBar from "../../components/SideBar";
+import { useNavigate } from "react-router-dom";
 
 export default function Item() {
   const [hidden, setHidden] = useState(true);
@@ -21,6 +22,7 @@ export default function Item() {
     price: "",
     description: "",
   });
+  const navigate = useNavigate();
 
   function getItem() {
     productApi

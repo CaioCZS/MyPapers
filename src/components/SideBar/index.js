@@ -1,4 +1,4 @@
-import logo from "../../assets/img/logo_v2_white.png";
+import logo from "../../assets/img/logo_dark.png";
 import authApi from "../../services/authApi";
 import {
   Background,
@@ -10,9 +10,11 @@ import {
 } from "./style";
 import { useContext } from "react";
 import UserContext from "../../Context/UserContext.js";
+import { useNavigate } from "react-router-dom";
 
 export default function SideBar({ hidden, setHidden }) {
   const { user } = useContext(UserContext);
+  const navigate = useNavigate();
 
   function logOut() {
     const confirmed = window.confirm("Sair?");
@@ -42,7 +44,9 @@ export default function SideBar({ hidden, setHidden }) {
             <span>
               <ExitIcon
                 onClick={
-                  user.userName ? () => logOut() : alert(`Você não está logado`)
+                  user.userName
+                    ? () => logOut()
+                    : () => alert(`Você não está logado`)
                 }
               />
             </span>
