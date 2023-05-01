@@ -1,8 +1,7 @@
 import styled from "styled-components"
 
 const LogoContainer = styled.div`
-  top: 80px;
-  height: 35vh;
+  height: 25vh;
   width: 100vw;
   display: flex;
   justify-content: center;
