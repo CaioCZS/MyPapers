@@ -8,34 +8,42 @@ export const AmountButton = styled.section`
   justify-content: space-between;
   padding-right: 10px;
   box-sizing: border-box;
-  div {
+  p {
     width: 100%;
     height: 100%;
     display: flex;
     align-items: center;
-    background: #f1e7c5;
+    justify-content: center;
+    background-color: #fff;
     border: 0.977597px solid rgba(1, 23, 47, 0.2);
     box-sizing: border-box;
-    font-size: 11px;
+    font-size: 14px;
+    :hover {
+      cursor: default;
+    }
   }
 `;
-
 export const AddButton = styled(IoIosAdd)`
   width: 100%;
   height: 100%;
-  background-color: #f1dab8;
+  background-color: #b6d4bb;
   border: 0.977597px solid #01172f;
-  border-radius: 0px 5px 5px 0px;
+  border-radius: 0px 10px 10px 0px;
   opacity: 20%;
   box-sizing: border-box;
+  :hover {
+    cursor: pointer;
+  }
 `;
-
 export const SubButton = styled(IoIosRemove)`
   width: 100%;
   height: 100%;
-  background-color: #f1dab8;
+  background-color: #b6d4bb;
   border: 0.977597px solid #01172f;
-  border-radius: 5px 0px 0px 5px;
+  border-radius: 10px 0px 0px 10px;
   opacity: 20%;
   box-sizing: border-box;
+  :hover {
+    cursor: pointer;
+  }
 `;

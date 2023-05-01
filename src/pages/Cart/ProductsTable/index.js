@@ -2,14 +2,20 @@ import ProductRow from "../../../components/CartProductRow";
 import { ButtonsContainer, StyledLink } from "../style";
 import { ProductsContainer, ProductsList, TotalBar } from "./style";
 
-export default function DisplayProducts({ products }) {
+export default function DisplayProducts({ products, getCartItens }) {
+  function totalBalance() {
+    const sum = products.reduce((acc, cu) => acc + cu.quantity * cu.price, 0);
+    return sum.toFixed(2).toString().replace(".", ",");
+  }
+  const balance = products && totalBalance();
+
   return (
     <>
       <ProductsContainer>
         <ProductsList>
           <ul>
             {products.map((p) => (
-              <ProductRow key={p._id} product={p} />
+              <ProductRow key={p._id} product={p} getCartItens={getCartItens} />
             ))}
           </ul>
         </ProductsList>
@@ -17,7 +23,7 @@ export default function DisplayProducts({ products }) {
 
       <TotalBar>
         <strong>Total</strong>
-        <div>R$ 50,00</div>
+        <div>{`R$ ${balance}`}</div>
       </TotalBar>
 
       <ButtonsContainer>

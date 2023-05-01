@@ -14,7 +14,6 @@ export const Background = styled.div`
   display: ${(props) => (props.visibility ? "none" : "")};
   transition: all 150ms linear;
 `;
-
 export const MenuContainer = styled.aside`
   width: 280px;
   height: 100%;
@@ -39,7 +38,6 @@ export const MenuContainer = styled.aside`
     left: 25%;
   }
 `;
-
 export const ContentContainer = styled.div`
   display: flex;
   flex-direction: column;
@@ -55,12 +53,10 @@ export const ContentContainer = styled.div`
     text-transform: uppercase;
   }
 `;
-
 export const ExitIcon = styled(IoMdExit)`
   font-size: 20px;
   margin-right: 5px;
 `;
-
 export const StyledLink = styled(Link)`
   width: 100%;
   height: 76px;
@@ -74,7 +70,6 @@ export const StyledLink = styled(Link)`
   text-decoration: none;
   text-transform: uppercase;
 `;
-
 export const CloseIcon = styled(IoIosClose)`
   position: absolute;
   z-index: 9;

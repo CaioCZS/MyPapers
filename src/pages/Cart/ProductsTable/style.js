@@ -12,13 +12,12 @@ export const ProductsContainer = styled.div`
   overflow: hidden;
   border: 1px solid #f0cdab;
 `;
-
 export const ProductsList = styled.article`
   width: 100%;
   height: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
 
   ul {
     overflow-y: auto;
@@ -30,7 +29,6 @@ export const ProductsList = styled.article`
     }
   }
 `;
-
 export const TotalBar = styled.section`
   min-height: 10%;
   border-radius: 5px;

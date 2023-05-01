@@ -19,7 +19,6 @@ export const ContainerSearch = styled.div`
     color: #01172f;
   }
 `;
-
 export const SearchIcon = styled(HiMagnifyingGlass)`
   font-size: 25px;
   margin-right: 21px;
