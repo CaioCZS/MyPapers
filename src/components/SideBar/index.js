@@ -63,7 +63,7 @@ export default function SideBar({ hidden, setHidden }) {
           <StyledLink>Categoria 3</StyledLink>
         </ContentContainer>
 
-        <img alt="logo" src={logo} />
+        <img alt="logo" src={logo} onClick={() => (hidden ? "" : setHidden(!hidden))} />
       </MenuContainer>
     </>
   );
