@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import Header from "../../components/Header";
-import Search from "../../components/Search";
+// import Search from "../../components/Search";
 import {
   ContainerBody,
   ContainerItem,
@@ -11,6 +11,7 @@ import {
 import productApi from "../../services/productApi";
 import { useParams } from "react-router";
 import SideBar from "../../components/SideBar";
+import { useNavigate } from "react-router-dom";
 
 export default function Item() {
   const [hidden, setHidden] = useState(true);
@@ -21,6 +22,7 @@ export default function Item() {
     price: "",
     description: "",
   });
+  const navigate = useNavigate();
 
   function getItem() {
     productApi
@@ -31,12 +33,16 @@ export default function Item() {
 
   useEffect(getItem, [id]);
 
+  function Page(page) {
+    navigate(page);
+  }
+
   return (
     <>
       <Header hidden={hidden} setHidden={setHidden} />
       <SideBar hidden={hidden} setHidden={setHidden} />
       <ContainerBody>
-        <Search />
+        {/*<Search />*/}
         <ContainerItem>
           <img alt="product" src={item.image} />
         </ContainerItem>
@@ -50,7 +56,7 @@ export default function Item() {
             <h3>FRETE GRÁTIS</h3>
           </div>
           <div className="buy">
-            <button>COMPRAR</button>
+            <button onClick={() => Page("/carrinho")}>COMPRAR</button>
           </div>
         </ContainerProduct>
         <ContainerDescription>

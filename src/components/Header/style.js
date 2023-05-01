@@ -16,7 +16,6 @@ export const ContainerHeader = styled.div`
   z-index: 1;
   img {
     width: 60px;
-    height: 60px;
   }
 `;
 export const MenuIcon = styled(IoMenuOutline)`
