@@ -12,6 +12,7 @@ export const ContainerBody = styled.div`
 `;
 
 export const ContainerItem = styled.div`
+  margin-top: 21px;
   width: 100vw;
   height: 250px;
   display: flex;

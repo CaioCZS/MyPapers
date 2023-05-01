@@ -11,6 +11,7 @@ export const ContainerBody = styled.div`
 `;
 
 export const ContainerAd = styled.div`
+  margin-top: 21px;
   width: 100vw;
   height: 150px;
   display: flex;
