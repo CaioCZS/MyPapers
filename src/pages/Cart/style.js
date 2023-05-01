@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 export const ButtonsContainer = styled.div`
@@ -22,12 +23,6 @@ export const ButtonsContainer = styled.div`
     line-height: 12px;
     letter-spacing: 1.95519px;
     text-transform: uppercase;
-
-    p {
-      margin-left: 16px;
-      font-size: 11px;
-      font-family: "Inter", sans-serif;
-    }
   }
 `;
 
@@ -64,4 +59,12 @@ export const MainContentContainer = styled.div`
     color: #b63f4d;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
   }
+`;
+
+export const StyledLink = styled(Link)`
+  margin-left: 16px;
+  font-size: 11px;
+  font-family: "Inter", sans-serif;
+  text-decoration: none;
+  color: #f1e7c5;
 `;

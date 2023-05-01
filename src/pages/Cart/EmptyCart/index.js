@@ -1,5 +1,5 @@
 import logoIcon from "../../../assets/img/logo_v2_icon.png";
-import { ButtonsContainer } from "../style";
+import { ButtonsContainer, StyledLink } from "../style";
 import { Container } from "./style";
 
 export default function EmptyCart() {
@@ -11,7 +11,7 @@ export default function EmptyCart() {
       </Container>
       <ButtonsContainer>
         <button>
-          <p>Continuar Comprando</p>
+          <StyledLink to={"/"}>Continuar Comprando</StyledLink>
         </button>
       </ButtonsContainer>
     </>
