@@ -5,7 +5,7 @@ function createConfig(token) {
     headers: {
       Authorization: `Bearer ${token}`,
     },
-  };
+  }
 }
 
 function login(body) {
@@ -20,10 +20,10 @@ function signUp(body) {
 
 function logOut(token) {
   const promise = axios.delete(
-    `${process.env.REACT_APP_API_URL}/logout`,
+    `${process.env.REACT_APP_BASE_URL}/logout`,
     createConfig(token)
-  );
-  return promise;
+  )
+  return promise
 }
 
 const authApi = { login, signUp, logOut }

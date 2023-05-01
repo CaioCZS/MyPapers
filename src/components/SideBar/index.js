@@ -1,35 +1,36 @@
-import logo from "../../assets/img/logo_v2_white.png";
-import authApi from "../../services/authApi";
+import logo from "../../assets/img/logo_v2_white.png"
+import authApi from "../../services/authApi"
 import {
   Background,
   CloseIcon,
   ContentContainer,
   ExitIcon,
   MenuContainer,
-} from "./style";
-import { useContext } from "react";
-import UserContext from "../../Context/UserContext.js";
-import { useNavigate } from "react-router-dom";
+} from "./style"
+import { useContext } from "react"
+import UserContext from "../../Context/UserContext.js"
+import { useNavigate } from "react-router-dom"
 
 export default function SideBar({ hidden, setHidden }) {
-  const { user } = useContext(UserContext);
-  const navigate = useNavigate();
+  const { user, setUser } = useContext(UserContext)
+  const navigate = useNavigate()
 
   function logOut() {
-    const confirmed = window.confirm("Sair?");
+    const confirmed = window.confirm("Sair?")
     if (confirmed) {
       authApi
         .logOut(user.token)
         .then(() => {
-          navigate("/");
-          localStorage.removeItem("user");
+          navigate("/")
+          setUser({})
+          localStorage.removeItem("user")
         })
-        .catch((err) => alert(err.response.data));
+        .catch((err) => alert(err.response.data))
     }
   }
 
   function Page(page) {
-    navigate(page);
+    navigate(page)
   }
 
   return (
@@ -64,8 +65,12 @@ export default function SideBar({ hidden, setHidden }) {
               */}
         </ContentContainer>
 
-        <img alt="logo" src={logo} onClick={() => (hidden ? "" : setHidden(!hidden))} />
+        <img
+          alt="logo"
+          src={logo}
+          onClick={() => (hidden ? "" : setHidden(!hidden))}
+        />
       </MenuContainer>
     </>
-  );
+  )
 }
