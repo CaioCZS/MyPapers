@@ -11,6 +11,7 @@ export const ContainerBody = styled.div`
 `;
 
 export const ContainerAd = styled.div`
+  margin-top: 21px;
   width: 100vw;
   height: 150px;
   display: flex;
@@ -20,8 +21,7 @@ export const ContainerAd = styled.div`
   border-radius: 10px;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   img {
-    width: 90;
-    height: 90;
+    width: 300px;
   }
 `;
 
@@ -48,12 +48,16 @@ export const Product = styled.div`
     width: 60px;
     height: 60px;
   }
-  p {
+  div {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    text-align: center;
     margin-bottom: 8px;
     font-family: "Inter";
     font-style: normal;
     font-weight: 400;
-    font-size: 10px;
+    font-size: 12px;
     line-height: 12px;
     color: #01172f;
   }

@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import Header from "../../components/Header";
-import Search from "../../components/Search";
+// import Search from "../../components/Search";
 import {
   ContainerBody,
   ContainerItem,
@@ -11,8 +11,12 @@ import {
 import productApi from "../../services/productApi";
 import { useParams } from "react-router";
 import SideBar from "../../components/SideBar";
+import { useNavigate } from "react-router-dom";
+import { useContext } from "react";
+import UserContext from "../../Context/UserContext.js";
 
 export default function Item() {
+  const { user } = useContext(UserContext);
   const [hidden, setHidden] = useState(true);
   const { id } = useParams();
   const [item, setItem] = useState({
@@ -21,6 +25,7 @@ export default function Item() {
     price: "",
     description: "",
   });
+  const navigate = useNavigate();
 
   function getItem() {
     productApi
@@ -29,14 +34,25 @@ export default function Item() {
       .catch((err) => alert(err.response.data));
   }
 
+  function buy(id) {
+    productApi
+      .buy(id, user.token)
+      .then(() => Page("/carrinho"))
+      .catch((err) => alert(err.response.data));
+  }
+
   useEffect(getItem, [id]);
+
+  function Page(page) {
+    navigate(page);
+  }
 
   return (
     <>
       <Header hidden={hidden} setHidden={setHidden} />
       <SideBar hidden={hidden} setHidden={setHidden} />
       <ContainerBody>
-        <Search />
+        {/*<Search />*/}
         <ContainerItem>
           <img alt="product" src={item.image} />
         </ContainerItem>
@@ -50,7 +66,13 @@ export default function Item() {
             <h3>FRETE GRÁTIS</h3>
           </div>
           <div className="buy">
-            <button>COMPRAR</button>
+            <button
+              onClick={() =>
+                user.token ? buy(id) : alert("Faça login!")
+              }
+            >
+              COMPRAR
+            </button>
           </div>
         </ContainerProduct>
         <ContainerDescription>

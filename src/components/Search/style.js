@@ -3,7 +3,6 @@ import { HiMagnifyingGlass } from "react-icons/hi2";
 
 export const ContainerSearch = styled.div`
   margin-top: 21px;
-  margin-bottom: 21px;
   display: flex;
   justify-content: space-between;
   align-items: center;

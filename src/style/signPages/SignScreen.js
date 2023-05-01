@@ -1,9 +1,12 @@
 import styled from "styled-components"
 
 const SignScreen = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   height: 100vh;
   width: 100vw;
-  background-color: #B6D4BB;
+  background-color: #b6d4bb;
   text-align: center;
   form {
     font-family: "Inter";

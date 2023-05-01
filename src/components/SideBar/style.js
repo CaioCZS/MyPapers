@@ -25,14 +25,13 @@ export const MenuContainer = styled.aside`
   left: 0;
   z-index: 3;
 
-  background-color: #f0cdab;
+  background-color: #b6d4bb;
   box-shadow: 0 0 7px 0 rgb(0 0 0 / 75%);
   transition: all 360ms ease-in-out;
   left: ${(props) => props.visibility};
 
   img {
     width: 45%;
-    opacity: 20%;
     position: absolute;
     bottom: 0;
     left: 25%;
@@ -51,20 +50,26 @@ export const ContentContainer = styled.div`
     font-size: 16px;
     letter-spacing: 1.95519px;
     text-transform: uppercase;
+    color: #fff;
+  }
+  p {
+    margin-top: 21px;
   }
 `;
 export const ExitIcon = styled(IoMdExit)`
-  font-size: 20px;
+  margin-top: 21px;
+  font-size: 25px;
   margin-right: 5px;
+  color: #fff;
 `;
 export const StyledLink = styled(Link)`
   width: 100%;
-  height: 76px;
+  height: 60px;
   padding: 20px;
   display: flex;
   justify-content: left;
   align-items: center;
-  font-size: 20px;
+  font-size: 16px;
   color: #fff;
   border-bottom: 1px solid #fff;
   text-decoration: none;

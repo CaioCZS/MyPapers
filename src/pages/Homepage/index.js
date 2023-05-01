@@ -1,10 +1,11 @@
 import Header from "../../components/Header";
 import { ContainerBody, ContainerAd, ContainerProduct, Product } from "./style";
-import Search from "../../components/Search/index";
+// import Search from "../../components/Search/index";
 import { useNavigate } from "react-router-dom";
 import productApi from "../../services/productApi";
 import { useEffect, useState } from "react";
 import SideBar from "../../components/SideBar";
+import MyPapers from "../../assets/img/mypapers.png";
 
 export default function HomePage() {
   const [itens, setItens] = useState();
@@ -29,17 +30,19 @@ export default function HomePage() {
       <Header hidden={hidden} setHidden={setHidden} />
       <SideBar hidden={hidden} setHidden={setHidden} />
       <ContainerBody>
-        <Search />
+        {/* <Search /> */}
         <ContainerAd>
-          <img alt="ad" src="" onClick={() => Page("/")} />
+          <img alt="ad" src={MyPapers} />
         </ContainerAd>
         <ContainerProduct>
           {itens &&
             itens.map((p) => (
               <Product key={p._id} onClick={() => Page(`/item/${p._id}`)}>
                 <img alt="product" src={p.image}></img>
-                <p>{p.name}</p>
-                <p>{p.price}</p>
+                <div>
+                  <p>{p.name}</p>
+                  <p>{p.price}</p>
+                </div>
               </Product>
             ))}
         </ContainerProduct>

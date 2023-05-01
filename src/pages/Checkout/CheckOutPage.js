@@ -1,20 +1,43 @@
 import { Link, useNavigate } from "react-router-dom"
 import styled from "styled-components"
 import ResumeContainer from "./ResumeContainer.js"
-import { useState } from "react"
+import { useContext, useEffect, useState } from "react"
+import axios from "axios"
+import UserContext from "../../Context/UserContext.js"
 export default function CheckOutPage() {
   const [form, setForm] = useState({ name: "", cardNumber: "", address: "" })
+  const [products, setProducts] = useState([])
+  const [finalValue, setFinalValue] = useState(0)
+  const { user } = useContext(UserContext)
   const navigate = useNavigate()
-  function handleForm(e) {
-    e.preventDefault()
-    setForm({ ...form, [e.target.name]: e.target.value })
-  }
-
+  const config = { headers: { Authorization: `Bearer ${user.token}` } }
   function handleSubmit(e) {
     e.preventDefault()
     navigate("/")
   }
+  function calculateFinalPrice(productsArray) {
+    let finalPrice = 0
+    productsArray.forEach((e) => {
+      finalPrice = finalPrice + e.price * e.quantity
+    })
+    return finalPrice
+  }
 
+  useEffect(() => {
+    axios
+      .get(`${process.env.REACT_APP_BASE_URL}/cart`, config)
+      .then((res) => {
+        const items = res.data
+        setProducts(items)
+        const finalPrice = calculateFinalPrice(items)
+        setFinalValue(finalPrice)
+      })
+      .catch((err) => console.log(err.response.data))
+  }, [])
+  function handleForm(e) {
+    e.preventDefault()
+    setForm({ ...form, [e.target.name]: e.target.value })
+  }
   return (
     <Screen>
       <CheckoutContainer>
@@ -44,7 +67,7 @@ export default function CheckOutPage() {
             onChange={handleForm}
             required
           />
-          <ResumeContainer />
+          <ResumeContainer products={products} finalPrice={finalValue} />
           <Buttons>
             <StyledLink to="/carrinho">voltar</StyledLink>
             <button type="submit">Finalizar compra</button>
