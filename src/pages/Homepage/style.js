@@ -49,6 +49,7 @@ export const Product = styled.div`
     height: 60px;
   }
   div {
+    text-align: center;
     margin-bottom: 8px;
     font-family: "Inter";
     font-style: normal;
