@@ -18,9 +18,9 @@ function item(id) {
   return promise;
 }
 
-function buy(id, token, body) {
+function buy(id, token) {
   const promise = axios.post(
-    `${process.env.REACT_APP_BASE_URL}/buy/${id}`, body,
+    `${process.env.REACT_APP_BASE_URL}/buy/${id}`,
     createConfig(token)
   );
   return promise;
