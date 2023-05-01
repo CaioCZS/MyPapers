@@ -18,10 +18,10 @@ function item(id) {
   return promise;
 }
 
-function buy(id, token) {
+function buy(id, token, body) {
   const promise = axios.post(
     `${process.env.REACT_APP_BASE_URL}/buy/${id}`,
-    createConfig(token)
+    createConfig(token), body
   );
   return promise;
 }

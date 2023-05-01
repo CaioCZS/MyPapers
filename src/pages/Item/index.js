@@ -36,7 +36,7 @@ export default function Item() {
 
   function buy(id) {
     productApi
-      .buy(id, user.token)
+      .buy(id, user.token, user.userId)
       .then(() => Page("/carrinho"))
       .catch((err) => alert(err.response.data));
   }
