@@ -45,11 +45,11 @@ export const Product = styled.div`
   box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
   img {
     margin-top: 8px;
-    margin-bottom: 8px;
     width: 60px;
     height: 60px;
   }
   p {
+    margin-top: 4px;
     margin-bottom: 8px;
     font-family: "Inter";
     font-style: normal;
