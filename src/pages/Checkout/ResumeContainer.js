@@ -1,26 +1,25 @@
+import { useEffect, useState } from "react"
 import styled from "styled-components"
 
-export default function ResumeContainer() {
+export default function ResumeContainer({ products, finalPrice }) {
   return (
     <OrderResume>
       <h1>Resumo do pedido</h1>
       <OrderItems>
-        <li>
-          <p>Nome produto</p>
-          <p>R$ valor</p>
-        </li>
-        <li>
-          <p>Nome produto</p>
-          <p>R$ valor</p>
-        </li>
-        <li>
-          <p>Nome produto</p>
-          <p>R$ valor</p>
-        </li>
+        {products.map((p) => {
+          return (
+            <li key={p._id}>
+              <p>{p.name}</p>
+              <p>
+                R$ {p.price.toFixed(2)} quantidade:{p.quantity}
+              </p>
+            </li>
+          )
+        })}
       </OrderItems>
       <FinalValue>
         <p>Total</p>
-        <p>R$ valor</p>
+        <p>R$ {finalPrice}</p>
       </FinalValue>
     </OrderResume>
   )
