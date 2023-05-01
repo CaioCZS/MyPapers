@@ -8,8 +8,9 @@ export const ProductsContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #f0cdab;
+  background-color: #fff;
   overflow: hidden;
+  border: 1px solid #f0cdab;
 `;
 
 export const ProductsList = styled.article`

@@ -6,7 +6,8 @@ const LogoContainer = styled.div`
   width: 100vw;
   display: flex;
   justify-content: center;
-  position: relative;
+  align-items: end;
+  /* position: relative; */
   img {
     width: 10em;
     height: 10em;

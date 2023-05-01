@@ -2,7 +2,9 @@ import { Container } from "./style";
 import QuantityButton from "../QuantityButton/index";
 
 export default function ProductRow({ product }) {
-  const { image, name, price } = product;
+  const { userId, productId, name, image, price, description, quantity } =
+    product;
+  // console.log(product);
   return (
     <Container>
       <span>
@@ -10,8 +12,11 @@ export default function ProductRow({ product }) {
         <QuantityButton />
       </span>
       <div>
-        <p>{name}</p>
-        <p>{`R$ ${price}`}</p>
+        <div>
+          <p>{name}</p>
+          <p>{description}</p>
+        </div>
+        <span>{`R$ ${price.toFixed(2).toString().replace(".", ",")}`}</span>
       </div>
     </Container>
   );

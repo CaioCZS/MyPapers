@@ -5,6 +5,7 @@ import authApi from "../services/authApi.js"
 import { useNavigate } from "react-router-dom"
 import StyledLink from "../style/signPages/StyledLink.js"
 import logo from "../assets/img/logo_v2_white.png"
+
 export default function SignUpPage() {
   const [form, setForm] = useState({
     name: "",
