@@ -48,7 +48,7 @@ export const Product = styled.div`
     width: 60px;
     height: 60px;
   }
-  p {
+  div {
     margin-bottom: 8px;
     font-family: "Inter";
     font-style: normal;
