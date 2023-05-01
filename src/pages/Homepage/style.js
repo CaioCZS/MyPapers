@@ -48,13 +48,16 @@ export const Product = styled.div`
     width: 60px;
     height: 60px;
   }
-  p {
-    margin-top: 8px;
+  div {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    text-align: center;
     margin-bottom: 8px;
     font-family: "Inter";
     font-style: normal;
     font-weight: 400;
-    font-size: 10px;
+    font-size: 12px;
     line-height: 12px;
     color: #01172f;
   }

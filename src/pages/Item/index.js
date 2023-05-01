@@ -66,7 +66,13 @@ export default function Item() {
             <h3>FRETE GRÁTIS</h3>
           </div>
           <div className="buy">
-            <button onClick={user.token ? () => buy(id) : alert("Faça login!")}>COMPRAR</button>
+            <button
+              onClick={() =>
+                user.token ? buy(id) : alert("Faça login!")
+              }
+            >
+              COMPRAR
+            </button>
           </div>
         </ContainerProduct>
         <ContainerDescription>
