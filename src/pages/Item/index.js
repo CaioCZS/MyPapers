@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import Header from "../../components/Header";
-import Search from "../../components/Search";
+// import Search from "../../components/Search";
 import {
   ContainerBody,
   ContainerItem,
@@ -42,7 +42,7 @@ export default function Item() {
       <Header hidden={hidden} setHidden={setHidden} />
       <SideBar hidden={hidden} setHidden={setHidden} />
       <ContainerBody>
-        <Search />
+        {/*<Search />*/}
         <ContainerItem>
           <img alt="product" src={item.image} />
         </ContainerItem>

@@ -6,7 +6,6 @@ import {
   ContentContainer,
   ExitIcon,
   MenuContainer,
-  StyledLink,
 } from "./style";
 import { useContext } from "react";
 import UserContext from "../../Context/UserContext.js";
@@ -58,9 +57,11 @@ export default function SideBar({ hidden, setHidden }) {
               {user.userName ? `Olá, ${user.userName}` : `Olá, faça seu login`}
             </p>
           </div>
+          {/*
           <StyledLink>Categoria 1</StyledLink>
           <StyledLink>Categoria 2</StyledLink>
           <StyledLink>Categoria 3</StyledLink>
+              */}
         </ContentContainer>
 
         <img alt="logo" src={logo} onClick={() => (hidden ? "" : setHidden(!hidden))} />

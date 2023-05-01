@@ -1,6 +1,6 @@
 import Header from "../../components/Header";
 import { ContainerBody, ContainerAd, ContainerProduct, Product } from "./style";
-import Search from "../../components/Search/index";
+// import Search from "../../components/Search/index";
 import { useNavigate } from "react-router-dom";
 import productApi from "../../services/productApi";
 import { useEffect, useState } from "react";
@@ -30,7 +30,7 @@ export default function HomePage() {
       <Header hidden={hidden} setHidden={setHidden} />
       <SideBar hidden={hidden} setHidden={setHidden} />
       <ContainerBody>
-        <Search />
+        {/* <Search /> */}
         <ContainerAd>
           <img alt="ad" src={MyPapers} />
         </ContainerAd>
