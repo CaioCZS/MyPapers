@@ -68,7 +68,7 @@ export default function Item() {
           <div className="buy">
             <button
               onClick={() =>
-                user.token ? () => buy(id) : alert("Faça login!")
+                user.token ? buy(id) : alert("Faça login!")
               }
             >
               COMPRAR
