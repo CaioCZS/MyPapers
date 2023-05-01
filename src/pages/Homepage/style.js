@@ -49,6 +49,9 @@ export const Product = styled.div`
     height: 60px;
   }
   div {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
     text-align: center;
     margin-bottom: 8px;
     font-family: "Inter";
