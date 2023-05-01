@@ -29,6 +29,10 @@ export default function SideBar({ hidden, setHidden }) {
     }
   }
 
+  function Page(page) {
+    navigate(page);
+  }
+
   return (
     <>
       <Background
@@ -50,7 +54,9 @@ export default function SideBar({ hidden, setHidden }) {
                 }
               />
             </span>
-            {user.userName ? `Olá, ${user.userName}` : "Olá, faça seu login"}
+            <p onClick={() => Page(!user.userName && "/login")}>
+              {user.userName ? `Olá, ${user.userName}` : `Olá, faça seu login`}
+            </p>
           </div>
           <StyledLink>Categoria 1</StyledLink>
           <StyledLink>Categoria 2</StyledLink>

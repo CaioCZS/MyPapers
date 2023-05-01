@@ -55,10 +55,14 @@ export const ContentContainer = styled.div`
     text-transform: uppercase;
     color: #fff;
   }
+  p {
+    margin-top: 21px;
+  }
 `;
 
 export const ExitIcon = styled(IoMdExit)`
-  font-size: 20px;
+  margin-top: 21px;
+  font-size: 25px;
   margin-right: 5px;
   color: #fff;
 `;
