@@ -31,6 +31,10 @@ export default function Item() {
 
   useEffect(getItem, [id]);
 
+  function Page(page) {
+    navigate(page);
+  }
+
   return (
     <>
       <Header hidden={hidden} setHidden={setHidden} />
@@ -50,7 +54,7 @@ export default function Item() {
             <h3>FRETE GRÁTIS</h3>
           </div>
           <div className="buy">
-            <button>COMPRAR</button>
+            <button onClick={() => Page("/carrinho")} >COMPRAR</button>
           </div>
         </ContainerProduct>
         <ContainerDescription>
