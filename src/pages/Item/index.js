@@ -54,7 +54,7 @@ export default function Item() {
             <h3>FRETE GRÁTIS</h3>
           </div>
           <div className="buy">
-            <button onClick={() => Page("/carrinho")} >COMPRAR</button>
+            <button onClick={() => Page("/carrinho")}>COMPRAR</button>
           </div>
         </ContainerProduct>
         <ContainerDescription>
