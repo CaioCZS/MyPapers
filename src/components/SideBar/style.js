@@ -33,7 +33,6 @@ export const MenuContainer = styled.aside`
 
   img {
     width: 45%;
-    opacity: 20%;
     position: absolute;
     bottom: 0;
     left: 25%;

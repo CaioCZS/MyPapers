@@ -1,4 +1,4 @@
-import logo from "../../assets/img/logo_dark.png";
+import logo from "../../assets/img/logo_v2_white.png";
 import authApi from "../../services/authApi";
 import {
   Background,
