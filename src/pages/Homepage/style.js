@@ -49,12 +49,11 @@ export const Product = styled.div`
     height: 60px;
   }
   p {
-    margin-top: 4px;
     margin-bottom: 8px;
     font-family: "Inter";
     font-style: normal;
     font-weight: 400;
-    font-size: 10px;
+    font-size: 12px;
     line-height: 12px;
     color: #01172f;
   }
