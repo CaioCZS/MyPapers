@@ -58,7 +58,7 @@ export default function Item() {
         <ContainerProduct>
           <div className="title">
             <h2>{item.name}</h2>
-            <h2>{item.price}</h2>
+            <h2>{item.price.replace(".", ",")}</h2>
           </div>
           <div className="shipping">
             <ShippingIcon />
