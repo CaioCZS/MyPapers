@@ -49,7 +49,7 @@ export default function CheckOutPage() {
     }
     checkout(body, config)
       .then((res) => {
-        alert(res.data.message)
+        alert(res.data)
         navigate("/")
       })
       .catch((err) => {
