@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 import productApi from "../../services/productApi";
 import { useEffect, useState } from "react";
 import SideBar from "../../components/SideBar";
-import MyPapers from "../../assets/img/mypapers.png";
+import MyPapers from "../../assets/img/logo.png";
 
 export default function HomePage() {
   const [itens, setItens] = useState();

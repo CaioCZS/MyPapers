@@ -34,8 +34,8 @@ export const ContainerProduct = styled.div`
 `;
 
 export const Product = styled.div`
-  width: 90px;
-  height: 120px;
+  width: 100px;
+  height: 130px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -51,12 +51,14 @@ export const Product = styled.div`
   div {
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
-    text-align: center;
+    justify-content: space-between;
     margin-bottom: 8px;
+  }
+  p {
+    text-align: center;
     font-family: "Inter";
     font-style: normal;
-    font-weight: 400;
+    font-weight: 700;
     font-size: 12px;
     line-height: 12px;
     color: #01172f;
