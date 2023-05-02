@@ -41,7 +41,7 @@ export default function HomePage() {
                 <img alt="product" src={p.image}></img>
                 <div>
                   <p>{p.name}</p>
-                  <p>{p.price}</p>
+                  <p>{p.price.replace(".", ",")}</p>
                 </div>
               </Product>
             ))}
