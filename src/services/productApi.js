@@ -11,8 +11,10 @@ function item(id) {
 }
 
 function buy(id, userId) {
-  const promise = axios.post(`${process.env.REACT_APP_BASE_URL}/buy/${id}`, userId);
-  return promise;
+  const promise = axios.post(`${process.env.REACT_APP_BASE_URL}/buy/${id}`, {
+    userId,
+  })
+  return promise
 }
 
 const productApi = { itens, item, buy }
