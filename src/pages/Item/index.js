@@ -1,19 +1,19 @@
 import { useEffect, useState } from "react"
 import Header from "../../components/Header"
 // import Search from "../../components/Search";
+import { useNavigate } from "react-router-dom"
 import {
   ContainerBody,
   ContainerItem,
   ContainerProduct,
   ShippingIcon,
   ContainerDescription,
-
-} from "./style";
-import productApi from "../../services/productApi";
-import { useParams } from "react-router";
-import SideBar from "../../components/SideBar";
-import { useContext } from "react";
-import UserContext from "../../Context/UserContext.js";
+} from "./style"
+import productApi from "../../services/productApi"
+import { useParams } from "react-router"
+import SideBar from "../../components/SideBar"
+import { useContext } from "react"
+import UserContext from "../../Context/UserContext.js"
 
 export default function Item() {
   const { user } = useContext(UserContext)
@@ -24,8 +24,8 @@ export default function Item() {
     image: "",
     price: "",
     description: "",
-
-  });
+  })
+  const navigate = useNavigate()
 
   function getItem() {
     productApi
@@ -37,8 +37,11 @@ export default function Item() {
   function postBuy(id) {
     productApi
       .buy(id, user.userId)
-      .then((res) => console.log(res.data))
-      .catch((err) => alert(err.response.data));
+      .then((res) => {
+        alert("Produto adicionado no carrinho")
+        navigate("/")
+      })
+      .catch((err) => alert(err.response.data))
   }
 
   useEffect(getItem, [id])
