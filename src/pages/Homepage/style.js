@@ -19,7 +19,7 @@ export const ContainerAd = styled.div`
   align-items: center;
   background-color: #ffffff;
   border-radius: 10px;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
   img {
     width: 300px;
   }
@@ -34,31 +34,32 @@ export const ContainerProduct = styled.div`
 `;
 
 export const Product = styled.div`
-  width: 90px;
-  height: 120px;
+  width: 100px;
+  height: 130px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
   background-color: #ffffff;
   border-radius: 10px;
-  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.15);
   img {
     margin-top: 8px;
     width: 60px;
-    height: 60px;
   }
   div {
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
-    text-align: center;
+    justify-content: space-between;
     margin-bottom: 8px;
+  }
+  p {
+    color:  rgb(147 147 147);
+    text-align: center;
     font-family: "Inter";
     font-style: normal;
-    font-weight: 400;
+    font-weight: 700;
     font-size: 12px;
     line-height: 12px;
-    color: #01172f;
   }
 `;

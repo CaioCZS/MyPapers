@@ -26,7 +26,7 @@ export const MenuContainer = styled.aside`
   z-index: 3;
 
   background-color: #b6d4bb;
-  box-shadow: 0 0 7px 0 rgb(0 0 0 / 75%);
+  box-shadow: 0 0 4px 0 rgb(0 0 0 / 15%);
   transition: all 360ms ease-in-out;
   left: ${(props) => props.visibility};
 

@@ -20,7 +20,7 @@ export const ContainerItem = styled.div`
   align-items: center;
   background-color: #ffffff;
   border-radius: 10px;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
   img {
     width: 120px;
   }
@@ -36,7 +36,7 @@ export const ContainerProduct = styled.div`
   justify-content: space-evenly;
   background-color: #B6D4BB;
   border-radius: 10px;
-  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.15);
   .title {
     display: flex;
     justify-content: space-between;
@@ -72,7 +72,7 @@ export const ContainerProduct = styled.div`
     width: 80px;
     height: 30px;
     background: #f1e7c5;
-    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.15);
     border-radius: 10px;
     border: transparent;
     font-family: "Inter";
