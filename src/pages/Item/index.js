@@ -11,7 +11,6 @@ import {
 import productApi from "../../services/productApi";
 import { useParams } from "react-router";
 import SideBar from "../../components/SideBar";
-import { useNavigate } from "react-router-dom";
 import { useContext } from "react";
 import UserContext from "../../Context/UserContext.js";
 
@@ -25,7 +24,6 @@ export default function Item() {
     price: "",
     description: "",
   });
-  const navigate = useNavigate();
 
   function getItem() {
     productApi
@@ -37,7 +35,7 @@ export default function Item() {
   function postBuy(id) {
     productApi
       .buy(id)
-      .then(alert("Adicionado ao carrinho!"))
+      .then((res) => console.log(res.data))
       .catch((err) => alert(err.response.data));
   }
 
