@@ -46,7 +46,6 @@ export const Product = styled.div`
   img {
     margin-top: 8px;
     width: 60px;
-    height: 60px;
   }
   div {
     display: flex;
