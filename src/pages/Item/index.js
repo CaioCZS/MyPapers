@@ -34,18 +34,18 @@ export default function Item() {
       .catch((err) => alert(err.response.data));
   }
 
-  function buy(id) {
+  function page(page) {
+    navigate(page);
+  }
+
+  function postBuy(id) {
     productApi
-      .buy(id, user.token)
-      .then(() => Page("/carrinho"))
+      .buy(id)
+      .then(() => page("/carrinho"))
       .catch((err) => alert(err.response.data));
   }
 
   useEffect(getItem, [id]);
-
-  function Page(page) {
-    navigate(page);
-  }
 
   return (
     <>
@@ -68,7 +68,7 @@ export default function Item() {
           <div className="buy">
             <button
               onClick={() =>
-                user.token ? buy(id) : alert("Faça login!")
+                user.token ? postBuy(id) : alert("Faça login!")
               }
             >
               COMPRAR
