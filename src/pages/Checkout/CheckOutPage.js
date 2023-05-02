@@ -4,6 +4,7 @@ import ResumeContainer from "./ResumeContainer.js"
 import { useContext, useEffect, useState } from "react"
 import axios from "axios"
 import UserContext from "../../Context/UserContext.js"
+import checkout from "../../services/checkoutApi.js"
 export default function CheckOutPage() {
   const [form, setForm] = useState({ name: "", cardNumber: "", address: "" })
   const [products, setProducts] = useState([])
@@ -11,17 +12,6 @@ export default function CheckOutPage() {
   const { user } = useContext(UserContext)
   const navigate = useNavigate()
   const config = { headers: { Authorization: `Bearer ${user.token}` } }
-  function handleSubmit(e) {
-    e.preventDefault()
-    navigate("/")
-  }
-  function calculateFinalPrice(productsArray) {
-    let finalPrice = 0
-    productsArray.forEach((e) => {
-      finalPrice = finalPrice + e.price * e.quantity
-    })
-    return finalPrice
-  }
 
   useEffect(() => {
     axios
@@ -34,10 +24,42 @@ export default function CheckOutPage() {
       })
       .catch((err) => console.log(err.response.data))
   }, [])
+
+  function calculateFinalPrice(productsArray) {
+    let finalPrice = 0
+    productsArray.forEach((e) => {
+      finalPrice = finalPrice + e.price * e.quantity
+    })
+    return finalPrice
+  }
+
   function handleForm(e) {
     e.preventDefault()
     setForm({ ...form, [e.target.name]: e.target.value })
   }
+
+  function handleSubmit(e) {
+    e.preventDefault()
+    const { name, cardNumber, address } = form
+    const body = {
+      buyerName: name,
+      creditNumber: `${cardNumber}`,
+      adress: address,
+      finalPrice: finalValue,
+    }
+    checkout(body, config)
+      .then((res) => {
+        alert(res.data.message)
+        navigate("/")
+      })
+      .catch((err) => {
+        if (err.response.status === 404) {
+          navigate("/")
+        }
+        alert(err.response.data)
+      })
+  }
+
   return (
     <Screen>
       <CheckoutContainer>

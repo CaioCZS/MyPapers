@@ -1,11 +1,12 @@
-import DisplayProducts from "./ProductsTable";
-import EmptyCart from "./EmptyCart";
-import { ColorRing } from "react-loader-spinner";
-import { MainContentContainer, ScreenContainer } from "./style";
-import { useGetCartItens } from "../../services/cartApi";
+import DisplayProducts from "./ProductsTable"
+import EmptyCart from "./EmptyCart"
+import { ColorRing } from "react-loader-spinner"
+import { MainContentContainer, ScreenContainer } from "./style"
+import { useGetCartItens } from "../../services/cartApi"
+import { useEffect } from "react"
 
 export default function Cart() {
-  const { products, getCartItens } = useGetCartItens();
+  const { products, getCartItens } = useGetCartItens()
 
   return (
     <ScreenContainer>
@@ -18,5 +19,5 @@ export default function Cart() {
         )}
       </MainContentContainer>
     </ScreenContainer>
-  );
+  )
 }
