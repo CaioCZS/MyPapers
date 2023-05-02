@@ -34,7 +34,7 @@ export default function Item() {
 
   function postBuy(id) {
     productApi
-      .buy(id)
+      .buy(id, user.userId)
       .then((res) => console.log(res.data))
       .catch((err) => alert(err.response.data));
   }

@@ -10,8 +10,8 @@ function item(id) {
   return promise;
 }
 
-function buy(id) {
-  const promise = axios.post(`${process.env.REACT_APP_BASE_URL}/buy/${id}`);
+function buy(id, userId) {
+  const promise = axios.post(`${process.env.REACT_APP_BASE_URL}/buy/${id}`, userId);
   return promise;
 }
 
