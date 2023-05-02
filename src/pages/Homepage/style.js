@@ -19,7 +19,7 @@ export const ContainerAd = styled.div`
   align-items: center;
   background-color: #ffffff;
   border-radius: 10px;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
   img {
     width: 300px;
   }
@@ -42,7 +42,7 @@ export const Product = styled.div`
   align-items: center;
   background-color: #ffffff;
   border-radius: 10px;
-  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.15);
   img {
     margin-top: 8px;
     width: 60px;
