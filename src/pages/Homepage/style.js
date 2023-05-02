@@ -55,13 +55,12 @@ export const Product = styled.div`
     margin-bottom: 8px;
   }
   p {
-    color: #656565;
+    color:  rgb(147 147 147);
     text-align: center;
     font-family: "Inter";
     font-style: normal;
     font-weight: 700;
     font-size: 12px;
     line-height: 12px;
-    color: #01172f;
   }
 `;
