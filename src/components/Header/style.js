@@ -8,7 +8,7 @@ export const ContainerHeader = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
   background-color: #b6d4bb;
   position: fixed;
   left: 0px;
