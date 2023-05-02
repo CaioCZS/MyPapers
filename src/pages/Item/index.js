@@ -34,14 +34,10 @@ export default function Item() {
       .catch((err) => alert(err.response.data));
   }
 
-  function page(page) {
-    navigate(page);
-  }
-
   function postBuy(id) {
     productApi
       .buy(id)
-      .then(() => page("/carrinho"))
+      .then(alert("Adicionado ao carrinho!"))
       .catch((err) => alert(err.response.data));
   }
 
