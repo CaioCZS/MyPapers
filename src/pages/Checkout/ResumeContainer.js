@@ -19,7 +19,7 @@ export default function ResumeContainer({ products, finalPrice }) {
       </OrderItems>
       <FinalValue>
         <p>Total</p>
-        <p>R$ {finalPrice}</p>
+        <p>R$ {finalPrice.toFixed(2)}</p>
       </FinalValue>
     </OrderResume>
   )
