@@ -1,13 +1,13 @@
-import axios from "axios";
+import axios from "axios"
 
 function itens() {
-  const promise = axios.get(`${process.env.REACT_APP_BASE_URL}/`);
-  return promise;
+  const promise = axios.get(`${process.env.REACT_APP_BASE_URL}/`)
+  return promise
 }
 
 function item(id) {
-  const promise = axios.get(`${process.env.REACT_APP_BASE_URL}/item/${id}`);
-  return promise;
+  const promise = axios.get(`${process.env.REACT_APP_BASE_URL}/item/${id}`)
+  return promise
 }
 
 function buy(id, userId) {
@@ -15,6 +15,6 @@ function buy(id, userId) {
   return promise;
 }
 
-const productApi = { itens, item, buy };
+const productApi = { itens, item, buy }
 
-export default productApi;
+export default productApi
