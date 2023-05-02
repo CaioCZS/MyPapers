@@ -55,6 +55,7 @@ export const Product = styled.div`
     margin-bottom: 8px;
   }
   p {
+    color: #656565;
     text-align: center;
     font-family: "Inter";
     font-style: normal;
